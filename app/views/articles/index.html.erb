@@ -6,10 +6,12 @@
 <%
 =end%>
 
-<%= form_tag articles_path, method: :get do %>
-  <%= text_field_tag :term, params[:term], placeholder: "Search articles" %>
+<%= form_tag articles_path, method: :get, remote: true do %>
+  <%= text_field_tag :term, params[:term], placeholder: "Search articles", id: "search_term" %>
   <%= submit_tag "Search", name: nil %>
 <% end %>
+
+<div id="search_results"></div>
 
 <div id="articles">
   <% @articles.each do |article| %>
