@@ -11,6 +11,8 @@
   </head>
 
   <body>
+    <h1>SearchEngine</h1>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

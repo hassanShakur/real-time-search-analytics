@@ -9,10 +9,18 @@
 #   end
 
 # generate 30 fake articles
+# 30.times do
+#     Article.create(
+#         title: Faker::Book.title,
+#         body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+#         user_id: 1
+#     )
+#     end
 30.times do
-    Article.create(
-        title: Faker::Book.title,
-        body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
-        user_id: 1
-    )
-    end
+  Article.create(
+    title: Faker::Movie.quote,
+    body: Faker::Quote.famous_last_words,
+    user_id: 1
+  )
+end
+

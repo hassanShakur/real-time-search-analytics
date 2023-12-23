@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "articles#index", as: :authenticated_root
+  # unauth root to be /users/sign_in
+  root "devise/sessions#new", as: :unauthenticated_root
 end
