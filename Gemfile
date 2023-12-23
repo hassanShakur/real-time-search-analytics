@@ -71,4 +71,13 @@ gem "devise", "~> 4.9"
 
 gem 'faker'
 
+gem "elasticsearch"
+
+gem "elasticsearch-model"
+
+gem "elasticsearch-rails"
+
 gem "searchkick", "~> 5.3"
+
+# load environment variables from .env file
+gem "dotenv-rails", groups: %i[ development test ]

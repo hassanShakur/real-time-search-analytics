@@ -1,6 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Articles</h1>
+<%
+=begin%>
+ <h1>Articles</h1> 
+<%
+=end%>
+
+<%= form_tag articles_path, method: :get do %>
+  <%= text_field_tag :term, params[:term], placeholder: "Search articles" %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
 
 <div id="articles">
   <% @articles.each do |article| %>

@@ -1,4 +1,4 @@
-require 'elasticsearch/model'
+# require 'elasticsearch/model'
 
 class Article < ApplicationRecord
     belongs_to :user
