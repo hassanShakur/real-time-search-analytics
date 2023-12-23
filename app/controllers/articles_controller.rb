@@ -48,8 +48,18 @@ class ArticlesController < ApplicationController
     return unless new_query
 
     previous_queries = UserQuery.where.not(id: nil)
+    found_matches = 0
     previous_queries.each do |query|
-      if new_query.include?(query.query) && query.query != new_query
+      # delete extra matches if more than 1 exact match is found
+      if query.query == new_query
+        found_matches += 1
+        if found_matches > 1
+          query.destroy
+          # dev logging 😅
+          puts "Query deleted: #{query.query} ❌❌❌❌❌❌❌❌"
+        end
+      # delete previous queries if the new query is more complete 
+      elsif new_query.include?(query.query)
         # If the new query is more complete, delete the previous query
         query.destroy
         # dev logging 😅
