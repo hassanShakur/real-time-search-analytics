@@ -70,3 +70,5 @@ end
 gem "devise", "~> 4.9"
 
 gem 'faker'
+
+gem "searchkick", "~> 5.3"
