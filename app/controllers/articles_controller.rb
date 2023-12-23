@@ -27,6 +27,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # display the query analytics
+  def analytics
+    puts "Current user: #{current_user.email}"
+    # select all queries from the current user
+    @user_queries = UserQuery.where(user: current_user)
+  end
+
   def show
   end
 

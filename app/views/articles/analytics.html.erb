@@ -1,0 +1,11 @@
+<h1>User Queries Analytics</h1>
+
+<% if @user_queries.present? %>
+  <ul>
+    <% @user_queries.each do |query| %>
+      <li><%= query.query %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No user queries available.</p>
+<% end %>

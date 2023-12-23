@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :articles
+  resources :articles do
+    collection do
+      post 'save_query'
+      get 'analytics'
+    end
+  end
+
+  # route /analytics to /articles/analytics
+  get 'analytics', to: redirect('/articles/analytics')
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
