@@ -37,7 +37,24 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def new
+    @article = Article.new
+  end
+
+  def create
+    @article = Article.new(params[:article])
+    if @article.save
+      redirect_to @article, notice: 'Article was successfully created.'
+    else
+      render action: 'new'
+    end
+  end
+
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def debounce(time)
     return if time.nil?
