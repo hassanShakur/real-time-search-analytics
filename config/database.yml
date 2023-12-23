@@ -22,6 +22,8 @@ default: &default
 development:
   <<: *default
   database: search_engine_development
+  username: Dev
+  password: 12345678
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -56,6 +58,8 @@ development:
 test:
   <<: *default
   database: search_engine_test
+  username: Dev
+  password: 12345678
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,5 +84,7 @@ test:
 production:
   <<: *default
   database: search_engine_production
-  username: search_engine
-  password: <%= ENV["SEARCH_ENGINE_DATABASE_PASSWORD"] %>
+  username: Dev
+  password: 12345678
+  # username: search_engine
+  # password: <%= ENV["SEARCH_ENGINE_DATABASE_PASSWORD"] %>
