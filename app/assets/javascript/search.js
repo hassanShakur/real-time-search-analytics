@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to execute when typing is done
   function doneTyping() {
     var searchTerm = document.getElementById('search_term').value;
-    console.log('Search term:', searchTerm);
     // Make an AJAX request to update search results
     updateSearchResults(searchTerm);
   }
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
       dataType: 'script', // Expecting JavaScript response
       success: function (response) {
         // Handle success if needed
-        console.log(response);
         $('#articles').html(response);
       },
       error: function (error) {
