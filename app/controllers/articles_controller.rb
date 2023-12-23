@@ -3,14 +3,19 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    # @articles = Article.all
     search = params[:term].present? ? params[:term] : nil
     @articles = if search
       Article.search(search)
     else
       Article.all
     end
+
+    respond_to do |format|
+      format.js   # Add this line to handle JS format
+      format.html
+    end
   end
+
 
   # GET /articles/1 or /articles/1.json
   def show
