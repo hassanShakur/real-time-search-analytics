@@ -38,6 +38,7 @@ class ArticlesController < ApplicationController
 
     # ...
   end
+end
 ```
 
 I also made use of a custom `debounce` function to prevent saving the same query multiple times. This is the code for the `debounce` function:
@@ -45,42 +46,42 @@ I also made use of a custom `debounce` function to prevent saving the same query
 ```ruby
 
 # ...
-  # Debounce function to prevent saving the same query multiple times
-  def debounce(time)
+# Debounce function to prevent saving the same query multiple times
+def debounce(time)
     return if time.nil?
 
     current_time = Time.now.to_f
     @last_called ||= 0.0
 
     if current_time - @last_called >= time / 1000.0
-      @last_called = current_time
-      yield
+        @last_called = current_time
+        yield
     end
-  end
+end
 
-  def update_previous_queries(new_query)
+def update_previous_queries(new_query)
     return unless new_query
 
     previous_queries = UserQuery.where.not(id: nil)
     found_matches = 0
     previous_queries.each do |query|
-      # delete extra matches if more than 1 exact match is found
-      if query.query == new_query
+        # delete extra matches if more than 1 exact match is found
+        if query.query == new_query
         found_matches += 1
         if found_matches > 1
-          query.destroy
+            query.destroy
         end
-      # delete previous queries if the new query is more complete
-      elsif new_query.include?(query.query)
+        # delete previous queries if the new query is more complete
+        elsif new_query.include?(query.query)
         # If the new query is more complete, delete the previous query
         query.destroy
         # dev logging 😅
-      elsif query.query.include?(new_query)
+        elsif query.query.include?(new_query)
         # If the previous query is more complete, stop the loop
         return
-      end
+        end
     end
-    end
+end
 ```
 
 ## Getting Started
