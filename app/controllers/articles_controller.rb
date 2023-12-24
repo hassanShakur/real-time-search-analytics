@@ -50,8 +50,8 @@ class ArticlesController < ApplicationController
 
     if @article.save
       # elastic search document reindexing
-      article = Article.last
-      article.reindex
+      # article = Article.last
+      # article.reindex
       
       redirect_to @article, notice: 'Article was successfully created.'
     else

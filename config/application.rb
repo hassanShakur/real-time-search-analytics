@@ -25,7 +25,7 @@ module SearchEngine
     # config.eager_load_paths << Rails.root.join("extras")
     config.assets.enabled = true
 
-    require 'elasticsearch/model'
+    # require 'elasticsearch/model'
 
   end
 end
