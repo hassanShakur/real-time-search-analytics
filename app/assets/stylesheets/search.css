@@ -36,10 +36,9 @@ header form {
 }
 
 header form button {
-  background-color: #fff;
-  border: 0;
+  /* background-color: #fff; */
   border-radius: 0.25rem;
-  color: #000;
+  /* color: #000; */
   cursor: pointer;
   font-size: 1rem;
   padding: 0.5rem 1.4rem;
@@ -71,6 +70,11 @@ form textarea {
   color: #fff;
 }
 
+form input[type='text']:focus,
+form textarea:focus {
+  outline: 1px solid rgb(90, 157, 205);
+}
+
 form input[type='submit'] {
   background-color: #343434;
   border: 0;
@@ -89,15 +93,52 @@ main form input[type='submit']:hover {
 }
 
 main form a {
-  background-color: #227908;
-  border-radius: 0.25rem;
-  color: #fff;
+  margin-left: 5%;
+  width: 10rem;
+}
+
+button,
+a {
   font-size: 1rem;
   margin-left: 0.5rem;
   padding: 0.5rem 1.4rem;
+  border-radius: 0.25rem;
   text-align: center;
   display: grid;
   place-items: center;
+  width: fit-content;
+  color: #fff;
+  border: 0;
+}
+
+a.safe,
+button.safe {
+  background-color: #227908;
+}
+
+a.safe:hover,
+button.safe:hover {
+  background-color: #135000;
+}
+
+a.danger,
+button.danger {
+  background-color: #b91c1c;
+}
+
+a.danger:hover,
+button.danger:hover {
+  background-color: #950202;
+}
+
+a.neutral,
+button.neutral {
+  background-color: #343434;
+}
+
+a.neutral:hover,
+button.neutral:hover {
+  background-color: #1c1b1b;
 }
 
 main #articles {
@@ -124,6 +165,7 @@ main #articles .article {
   cursor: pointer;
   height: 10rem;
   max-width: 350px;
+  text-align: left;
 }
 
 main #articles .article .title {
@@ -137,7 +179,7 @@ main #articles .article .body {
 }
 
 main #articles .article:hover {
-  background-color: #3b3b3b;
+  background-color: #121212;
 }
 
 #articles > p {
