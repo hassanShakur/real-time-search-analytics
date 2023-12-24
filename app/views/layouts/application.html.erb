@@ -17,11 +17,13 @@
 
   <body>
     <h1>SearchEngine</h1>
-    <header>
-      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "danger" %>
-      <%= button_to "Analytics", '/analytics', method: :get, class: "safe"  %>
-      <%= link_to "New article", new_article_path, class: "safe" %>
-    </header>
+    <% if user_signed_in? %>
+      <header>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "danger" %>
+        <%= button_to "Analytics", '/analytics', method: :get, class: "safe"  %>
+        <%= link_to "New article", new_article_path, class: "safe" %>
+      </header>
+    <% end %>
 
     <main>
       <%= yield %>
