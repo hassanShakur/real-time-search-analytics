@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     if @debounced_query
       UserQuery.create(query: @debounced_query, user: current_user)
       # dev logging 😅
-      # puts "Query saved: #{@debounced_query} ✅✅✅✅✅✅✅✅"
+      puts "Query saved: #{@debounced_query} ✅✅✅✅✅✅✅✅"
       update_previous_queries(@debounced_query)
     end
 
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
 
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      redirect_to articles_path, notice: 'Article was successfully created.'
     else
       render :new
     end
