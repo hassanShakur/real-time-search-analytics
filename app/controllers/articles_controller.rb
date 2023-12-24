@@ -15,10 +15,13 @@ class ArticlesController < ApplicationController
       update_previous_queries(@debounced_query)
     end
 
-    @articles = if @debounced_query
-      Article.search(@debounced_query)
+    @articles = []
+
+    if @debounced_query
+      @articles = Article.where("title LIKE ?", "%#{@debounced_query}%")
+      @articles = @articles + Article.where("body LIKE ?", "%#{@debounced_query}%")
     else
-      Article.all
+      @articles = Article.all
     end
 
     respond_to do |format|
