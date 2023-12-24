@@ -21,9 +21,18 @@
 
   <body>
     <h1>SearchEngine</h1>
-    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <header>
+      <%= button_to "Analytics", '/analytics', method: :get %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    </header>
+
+    <div id='notifications'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

@@ -1,12 +1,10 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
-
-  <p>
-    <strong>Body:</strong>
-    <%= article.body %>
-  </p>
-
-</div>
+<%= link_to article do %>
+  <div id="<%= dom_id article %>" class="article">
+    <h5 class="title">
+      <%= article.title %>
+    </h5>
+    <p class="body">
+      <%= article.body %>
+    </p>
+  </div>
+<% end %>

@@ -42,11 +42,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
+    @article = Article.new(article_params)
+
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
-      render action: 'new'
+      render :new
     end
   end
 
@@ -56,6 +57,12 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def article_params
+    # Use require and permit to whitelist the allowed attributes
+    params.require(:article).permit(:title, :body)
+  end
+
+  # Debounce function to prevent saving the same query multiple times
   def debounce(time)
     return if time.nil?
 
