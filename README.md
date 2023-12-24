@@ -8,6 +8,8 @@ This is a simple application that allows you to search for a term from a magnitu
 
 I have also made use of [Searchkick](https://github.com/ankane/searchkick) which is a Ruby gem that allows you to easily integrate Elasticsearch into your Rails application. It is very easy to use and has a lot of features that make it very powerful, especially when it comes to querying data.
 
+Live demo: [real-time-search-analytics](https://real-time-search-analytics.onrender.com/)
+
 ## Search Analytics
 
 The search analytics algorithm is very simple. It is based how complete the search term is. For example, if you search for `ruby`, the search engine will return all the articles that contain the word `ruby`. However, if you search for `ruby on rails`, the search engine will return all the articles that contains both `ruby` and `on` and `rails`. Here is part of the code that implements this:
