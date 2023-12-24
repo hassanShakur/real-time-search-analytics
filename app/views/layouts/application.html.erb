@@ -6,17 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
+    <%= stylesheet_link_tag 'search' %>
+
     <%= javascript_importmap_tags %>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <%= javascript_include_tag 'search' %>
-    <%
-=begin%>
- <%= javascript_include_tag 'articles' %> 
-<%
-=end%>
-
-
   </head>
 
   <body>
@@ -26,10 +22,14 @@
       <%= button_to "Logout", destroy_user_session_path, method: :delete %>
     </header>
 
-    <div id='notifications'>
+    <%
+=begin%>
+ <div id='notifications'>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    </div>
+    </div> 
+<%
+=end%>
 
     <main>
       <%= yield %>
