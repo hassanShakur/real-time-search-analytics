@@ -35,4 +35,4 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 plugin :tmp_restart
 
 # increase timeout to 120 seconds
-worker_timeout 120
+# worker_timeout 120
