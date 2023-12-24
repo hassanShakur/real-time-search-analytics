@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     if @debounced_query
       UserQuery.create(query: @debounced_query, user: current_user)
       # dev logging 😅
-      # puts "Query saved: #{@debounced_query} ✅✅✅✅✅✅✅✅"
+      puts "Query saved: #{@debounced_query} ✅✅✅✅✅✅✅✅"
       update_previous_queries(@debounced_query)
     end
 
