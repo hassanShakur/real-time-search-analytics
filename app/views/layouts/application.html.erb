@@ -12,7 +12,8 @@
 
     <%= javascript_importmap_tags %>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <%= javascript_include_tag 'search' %>
+    
+    <%= yield :head %>
   </head>
 
   <body>

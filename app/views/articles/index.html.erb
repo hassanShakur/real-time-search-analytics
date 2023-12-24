@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'search' %>
+<% end %>
+
 <p style="color: green"><%= notice %></p>
 
 <%= form_tag articles_path, method: :get, remote: true do %>
