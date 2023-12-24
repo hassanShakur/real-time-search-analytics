@@ -1,10 +1,10 @@
 <%= link_to article do %>
   <div id="<%= dom_id article %>" class="article">
     <h5 class="title">
-      <%= article.title %>
+      <%= truncate(article.title, length: 30, omission: '...') %>
     </h5>
     <p class="body">
-      <%= article.body %>
+      <%= truncate(article.body, length: 50, omission: '...') %>
     </p>
   </div>
 <% end %>
