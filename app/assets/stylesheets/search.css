@@ -54,7 +54,9 @@ main {
 }
 
 main form {
-  display: flex;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
@@ -82,19 +84,17 @@ form input[type='submit'] {
   color: #fff;
   cursor: pointer;
   font-size: 1rem;
-  margin-left: 0.5rem;
-  padding: 0.8rem 1.4rem;
-  width: fit-content;
+  padding: 0.6rem 1.4rem;
+  margin-left: 5%;
+  width: 10rem;
+}
+
+main form input[type='text'] {
+  max-width: unset;
 }
 
 main form input[type='submit']:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-main form a {
-  margin-left: 5%;
-  width: 10rem;
+  background-color: #707070;
 }
 
 button,
@@ -111,7 +111,7 @@ a {
   border: 0;
 }
 
-a.safe,
+.safe,
 button.safe {
   background-color: #227908;
 }
@@ -138,7 +138,7 @@ button.neutral {
 
 a.neutral:hover,
 button.neutral:hover {
-  background-color: #1c1b1b;
+  background-color: #707070;
 }
 
 main #articles {
@@ -250,6 +250,28 @@ form > div {
 #single_article .article .body {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+/* analytics page */
+#analytics {
+  display: grid;
+  gap: 1rem;
+  background-color: #282828;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+#analytics h1 {
+  font-size: 1.2rem;
+}
+
+#analytics ul {
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+#analytics ul li {
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 600px) {

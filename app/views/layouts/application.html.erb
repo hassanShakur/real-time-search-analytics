@@ -20,16 +20,8 @@
     <header>
       <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "danger" %>
       <%= button_to "Analytics", '/analytics', method: :get, class: "safe"  %>
+      <%= link_to "New article", new_article_path, class: "safe" %>
     </header>
-
-    <%
-=begin%>
- <div id='notifications'>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div> 
-<%
-=end%>
 
     <main>
       <%= yield %>
