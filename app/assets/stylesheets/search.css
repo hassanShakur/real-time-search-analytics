@@ -1,11 +1,10 @@
-/* DARK MODE SITE. ARTICLES ARRANGED AS CARDS THAT FIT IN A ROW DEPENDING ON SCREEN SIZE */
-/* SEARCH BAR AT TOP OF PAGE */
-
 * {
-  /* margin: 0;
-  padding: 0; */
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -17,6 +16,12 @@ body {
   padding: 0;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
 }
 
 header {
@@ -54,29 +59,45 @@ main form {
   margin-bottom: 1.5rem;
 }
 
-main form input[type='text'] {
-  background-color: #fff;
+form input[type='text'],
+form textarea {
+  background-color: #282828;
   border: 0;
   border-radius: 0.25rem;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   width: 100%;
+  max-width: 40rem;
+  color: #fff;
 }
 
-main form input[type='submit'] {
-  background-color: #fff;
+form input[type='submit'] {
+  background-color: #343434;
   border: 0;
   border-radius: 0.25rem;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   font-size: 1rem;
   margin-left: 0.5rem;
-  padding: 0.5rem 1.4rem;
+  padding: 0.8rem 1.4rem;
+  width: fit-content;
 }
 
 main form input[type='submit']:hover {
   background-color: #000;
   color: #fff;
+}
+
+main form a {
+  background-color: #227908;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1.4rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
 }
 
 main #articles {
@@ -102,15 +123,17 @@ main #articles .article {
   padding: 0.5rem 1rem;
   cursor: pointer;
   height: 10rem;
+  max-width: 350px;
 }
 
 main #articles .article .title {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
 }
 
 main #articles .article .body {
   font-size: 0.8rem;
+  line-height: 1.2rem;
 }
 
 main #articles .article:hover {
@@ -125,82 +148,66 @@ main #articles .article:hover {
   margin: 0 0;
 }
 
-/* <body>
-    <h1>SearchEngine</h1>
-    <header>
-      <form class="button_to" method="get" action="/analytics"><button type="submit">Analytics</button></form>
-      <form class="button_to" method="post" action="/users/sign_out"><input type="hidden" name="_method" value="delete" autocomplete="off"><button type="submit">Logout</button><input type="hidden" name="authenticity_token" value="y5EfP8Wx_hKbXhNNap_dGWK_rcCTmjlDa6wtQaI6yRZX5uznsBD24PQX16PDmYcoSSrc6ItQXvksp-2cEbhnMg" autocomplete="off"></form>
-    </header>
+/* new article page */
+#new-article h1 {
+  padding-left: 0;
+  margin: 0;
+}
 
-    <div id="notifications">
-      <p class="notice"></p>
-      <p class="alert"></p>
-    </div>
+form > div {
+  margin-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
+}
 
-    <main>
-      <p style="color: green"></p>
+#new-article form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-<form action="/articles" accept-charset="UTF-8" data-remote="true" method="get">
-  <input type="text" name="term" id="search_term" placeholder="Search articles">
-  <input type="submit" value="Search" data-disable-with="Search">
-</form>
-<div id="articles">
-    <a href="/articles/1">
-  <div id="article_1" class="article">
-    <h5 class="title">
-      Go ahead, make my day.
-    </h5>
-    <p class="body">
-      Does nobody understand?
-    </p>
-  </div>
-</a>
-    <a href="/articles/2">
-  <div id="article_2" class="article">
-    <h5 class="title">
-      I love the smell of napalm in the morning.
-    </h5>
-    <p class="body">
-      All my possessions for a moment of time.
-    </p>
-  </div>
-</a>
-    <a href="/articles/3">
-  <div id="article_3" class="article">
-    <h5 class="title">
-      What we've got here is failure to communicate.
-    </h5>
-    <p class="body">
-      Okay, I won't.
-    </p>
-  </div>
-</a>
-    <a href="/articles/4">
-  <div id="article_4" class="article">
-    <h5 class="title">
-      Greetings, programs!
-    </h5>
-    <p class="body">
-      Is it not meningitis?
-    </p>
-  </div>
-</a>
-    <a href="/articles/5">
-  <div id="article_5" class="article">
-    <h5 class="title">
-      What we've got here is failure to communicate.
-    </h5>
-    <p class="body">
-      All my possessions for a moment of time.
-    </p>
-  </div>
-</a>
-   
-</div>
+#new-article form label {
+  display: block;
+}
 
-<a href="/articles/new">New article</a>
+#new-article form textarea {
+  height: 10rem;
+}
 
-    </main>
-  
+#new-article form input[type='text']:focus,
+#new-article form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #fff;
+}
 
-</body> */
+#new-article form input[type='text']::placeholder,
+#new-article form textarea::placeholder {
+  color: #fff;
+}
+
+/* article page */
+#single_article {
+  margin: 0;
+  padding: 0;
+}
+
+#single_article .article {
+  background-color: #000;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  height: fit-content;
+  margin-bottom: 2rem;
+}
+
+#single_article .article .title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#single_article .article .body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+
