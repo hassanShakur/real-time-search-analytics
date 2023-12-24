@@ -3,7 +3,6 @@ databases:
     databaseName: search_engine_analytics
     user: search_engine_analytics
     plan: free
-    ipAllowlist: []
 
 services:
   - type: web
@@ -22,8 +21,3 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 3 # sensible default
-  - type: redis
-    name: search_engine_analytics
-    plan: free
-    ipAllowlist: []
-    maxmemory-policy: noeviction
