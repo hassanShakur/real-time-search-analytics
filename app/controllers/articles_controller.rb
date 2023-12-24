@@ -45,6 +45,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
 
+    # elastic search document reindexing
+    articles = Article.find 10
+    articles.reindex
+
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
