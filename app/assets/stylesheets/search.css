@@ -1,0 +1,206 @@
+/* DARK MODE SITE. ARTICLES ARRANGED AS CARDS THAT FIT IN A ROW DEPENDING ON SCREEN SIZE */
+/* SEARCH BAR AT TOP OF PAGE */
+
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+header form {
+  margin: 0;
+}
+
+header form button {
+  background-color: #fff;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1.4rem;
+}
+
+header form button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+main {
+  padding: 1.5rem;
+}
+
+main form {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+main form input[type='text'] {
+  background-color: #fff;
+  border: 0;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+main form input[type='submit'] {
+  background-color: #fff;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1.4rem;
+}
+
+main form input[type='submit']:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+main #articles {
+  margin: 4rem 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+main #articles a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main #articles a:hover {
+  color: #fff;
+}
+
+main #articles .article {
+  background-color: #000;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  height: 10rem;
+}
+
+main #articles .article .title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+main #articles .article .body {
+  font-size: 0.8rem;
+}
+
+main #articles .article:hover {
+  background-color: #3b3b3b;
+}
+
+#articles > p {
+  display: none;
+}
+
+#articles > #articles {
+  margin: 0 0;
+}
+
+/* <body>
+    <h1>SearchEngine</h1>
+    <header>
+      <form class="button_to" method="get" action="/analytics"><button type="submit">Analytics</button></form>
+      <form class="button_to" method="post" action="/users/sign_out"><input type="hidden" name="_method" value="delete" autocomplete="off"><button type="submit">Logout</button><input type="hidden" name="authenticity_token" value="y5EfP8Wx_hKbXhNNap_dGWK_rcCTmjlDa6wtQaI6yRZX5uznsBD24PQX16PDmYcoSSrc6ItQXvksp-2cEbhnMg" autocomplete="off"></form>
+    </header>
+
+    <div id="notifications">
+      <p class="notice"></p>
+      <p class="alert"></p>
+    </div>
+
+    <main>
+      <p style="color: green"></p>
+
+<form action="/articles" accept-charset="UTF-8" data-remote="true" method="get">
+  <input type="text" name="term" id="search_term" placeholder="Search articles">
+  <input type="submit" value="Search" data-disable-with="Search">
+</form>
+<div id="articles">
+    <a href="/articles/1">
+  <div id="article_1" class="article">
+    <h5 class="title">
+      Go ahead, make my day.
+    </h5>
+    <p class="body">
+      Does nobody understand?
+    </p>
+  </div>
+</a>
+    <a href="/articles/2">
+  <div id="article_2" class="article">
+    <h5 class="title">
+      I love the smell of napalm in the morning.
+    </h5>
+    <p class="body">
+      All my possessions for a moment of time.
+    </p>
+  </div>
+</a>
+    <a href="/articles/3">
+  <div id="article_3" class="article">
+    <h5 class="title">
+      What we've got here is failure to communicate.
+    </h5>
+    <p class="body">
+      Okay, I won't.
+    </p>
+  </div>
+</a>
+    <a href="/articles/4">
+  <div id="article_4" class="article">
+    <h5 class="title">
+      Greetings, programs!
+    </h5>
+    <p class="body">
+      Is it not meningitis?
+    </p>
+  </div>
+</a>
+    <a href="/articles/5">
+  <div id="article_5" class="article">
+    <h5 class="title">
+      What we've got here is failure to communicate.
+    </h5>
+    <p class="body">
+      All my possessions for a moment of time.
+    </p>
+  </div>
+</a>
+   
+</div>
+
+<a href="/articles/new">New article</a>
+
+    </main>
+  
+
+</body> */
