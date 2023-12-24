@@ -1,0 +1,29 @@
+databases:
+  - name: search_engine_analytics
+    databaseName: search_engine_analytics
+    user: search_engine_analytics
+    plan: free
+    ipAllowlist: []
+
+services:
+  - type: web
+    name: search_engine_analytics
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "./bin/rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: search_engine_analytics
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 3 # sensible default
+  - type: redis
+    name: search_engine_analytics
+    plan: free
+    ipAllowlist: []
+    maxmemory-policy: noeviction
