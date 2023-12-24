@@ -21,3 +21,5 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 3 # sensible default
+
+# job to run elasticsearch create index and import
