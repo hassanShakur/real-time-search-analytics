@@ -10,6 +10,8 @@ I have also made use of [Searchkick](https://github.com/ankane/searchkick) which
 
 Live demo: [real-time-search-analytics](https://real-time-search-analytics.onrender.com/)
 
+**Note:** After signing up, you may have to refresh the page to initialize the Elasticsearch index.
+
 ## Search Analytics
 
 The search analytics algorithm is very simple. It is based how complete the search term is. For example, if you search for `ruby`, the search engine will return all the articles that contain the word `ruby`. However, if you search for `ruby on rails`, the search engine will return all the articles that contains both `ruby` and `on` and `rails`. Here is part of the code that implements this:
